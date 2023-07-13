@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="./modules/style.css" />
+  </head>
+
+  <body>
+    <div class="matrices">
+      <h1>Calculadora de matrices</h1>
+      <p>Ingresa el numero de filas columnas para la matriz</p>
+      <label for="filas">Numero de filas: </label>
+      <input type="number" id="filas" name="filas" /><br />
+      <label for="columnas">Numero de columnas: </label>
+      <input type="number" id="columnas" name="columnas" /><br />
+      <input type="button" value="Crear Matriz" onclick="crearMatriz()" />
+
+      <h2>Ingrese los valores de las matrices</h2>
+      <div id="matrices"></div>
+      <input type="button" value="Sumar" onclick="operacionMatricial('sumar')" />
+      <input type="button" value="Restar" onclick="operacionMatricial('restar')" />
+      <input type="button" value="Multiplicar" onclick="operacionMatricial('multiplicar')" />
+      <input type="button" value="Inversa de A" onclick="operacionMatricial('inversa')" />
+      <input type="button" value="Transpuesta de A" onclick="operacionMatricial('transpuesta')" />
+
+      <h2>Resultado:</h2>
+      <div id="resultadoMatriz"></div>
+    </div>
+
+    <div class="integrales">
+      <h1>Calculadora de integrales por metodo de Trapecios</h1>
+      <p>
+        Ingresa los parametros de la funcion f(x) y los intervalos de la
+        funcion:
+      </p>
+      <p>Nota: Cualquier variable introducida sera convertida a X (solo se acepta una variable)</p>
+      <form>
+       f(x) = <input type="text" id="funcion" /><br />
+        <br />
+        limite inferior de X: <input type="text" id="ix" /><br />
+        <br />
+        limite superior de X: <input type="text" id="sx" value="" /><br />
+        <br />
+        numero de trapecios a utilizar:
+        <input type="text" value="10000" id="n" /><br />
+        <br />
+      </form>
+      <input type="button" value="calcular" onclick="calcularIntegral()" />
+      <h2>Resultado: <span id="resultadoIntegral"></span></h2>
+      <div id="resultadoIntegralDiv"></div>
+    </div>
+
+    <div class="raiz">
+      <h1>Calculadora de Raiz elevada a la n</h1>
+      <p>Ingresa los parametros de la raiz asi como a que esta elevada</p>
+      <br />
+      Raiz de: <input type="number" value="0" id="raiz" /> n =
+      <input type="number" value="2" id="nr" /> Maximas iteraciones:
+      <input type="number" value="100" id="it" /> Tolerancia de error:
+      <input type="number" value="0.0001" id="err" /><br />
+      <br />
+      <input type="button" value="calcular" onclick="calcularRaiz()" />
+      <br />
+      <h2>Resultado: <span id="resultadoRaiz"></span></h2>
+      <div id="resultadoRaizDiv"></div>
+    </div>
+
+    <script type="module">
+      import {calcularIntegral} from "./modules/integrales.js";
+      import {
+        crearMatriz,
+        operacionMatricial
+      } from "./modules/matrices.js";
+      import { calcularRaiz } from "./modules/raiz.js";
+
+      window.operacionMatricial = operacionMatricial
+      window.calcularIntegral = calcularIntegral;
+      window.crearMatriz = crearMatriz;
+      window.calcularRaiz = calcularRaiz;
+
+    </script>
+  </body>
+</html>

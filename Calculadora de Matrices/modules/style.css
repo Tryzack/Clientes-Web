@@ -1,0 +1,31 @@
+html {
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.matrices {
+  background-color: lightgreen;
+  height: auto;
+  width: auto;
+  margin: auto;
+}
+
+.integrales {
+  background-color: lightblue;
+  height: auto;
+  width: auto;
+  margin: auto;
+}
+
+.raiz {
+  background-color: lightcoral;
+  height: 300px;
+  width: auto;
+  margin: auto;
+}
+
+h1 {
+  font-size: large;
+}
+h2 {
+  font-size: medium;
+}
